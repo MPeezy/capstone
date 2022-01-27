@@ -1,0 +1,16 @@
+<div style="border: 1px solid black;" *ngFor="let d of dutys; let i = index">
+    <div id="display{{d.id}}">
+        <p>TM Name: {{d.name}}</p>
+        <p>Description: {{d.description}}</p>
+        <p>Due: {{d.due}}</p>
+        <p>Completed: {{d.completed}}</p>
+        <p>Id: {{d.id}}</p>
+        <button (click)="DeleteEntry(d.id, i)">Delete {{d.description}}</button>
+    </div>
+    <app-update-duty id="edit{{d.id}}" style="display: none;" [Id]=d.id></app-update-duty>
+
+    <button (click)="EditDuty(d.id)">Edit {{d.description}}</button>
+</div>
+
+<app-create-duty></app-create-duty>
+
